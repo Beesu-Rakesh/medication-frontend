@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios"; // Make sure axios is installed
+import axios from "axios"; 
 
 const AuthForm = ({ type }) => {
   const [formData, setFormData] = useState({ name: "", email: "", password: "", confirmPassword: "" });
@@ -16,16 +16,14 @@ const AuthForm = ({ type }) => {
           setError("Passwords do not match.");
           return;
         }
-        // Replace with your backend signup endpoint
-        const res = await axios.post("https://medication-backend-spw7.onrender.com/api/signup", {
+        const res = await axios.post("https://medication-backend-2.onrender.com/api/signup", {
           name: formData.name,
           email: formData.email,
           password: formData.password,
         });
         setSuccess("Signup successful!");
       } else {
-        // Replace with your backend login endpoint
-        const res = await axios.post("https://medication-backend-spw7.onrender.com/api/login", {
+        const res = await axios.post("https://medication-backend-2.onrender.com/api/login", {
           email: formData.email,
           password: formData.password,
         });
